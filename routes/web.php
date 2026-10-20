@@ -19,15 +19,9 @@ Route::get('/', function () {
 
 
 
-Route::get('/contacts', function () {
-    return "<h1>All Contacts</h1>";
-})->name('contacts.index');
+Route::get('/contacts', [ContactController::class,"index"])->name('contacts.index');
 
 
-Route::get('/contacts/create', function () {
-    return "<h1>Add new Contact</h1>";
-})->name('contacts.create');
+Route::get('/contacts/create', [ContactController::class,"create"])->name('contacts.create');
 
-Route::get('/contacts/{id}', function ($id) {
-    return App\Models\Contact::find($id);
-})->name('contacts.show');
+Route::get('/contacts/{id}', [ContactController::class,"show"])->name('contacts.show');
