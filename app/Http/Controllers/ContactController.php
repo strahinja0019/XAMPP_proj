@@ -3,21 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    public function index(){
-        return view("contacts.index");
+    // Return the contacts index view
+    function index() {
+        return view('contacts.index');
     }
 
-    public function create(){
-        return view("contacts.create");
+    // Return the contacts create view
+    function create() {
+        return view('contacts.create');
     }
 
-    public function show(int $id) {
-    $contact = App\Models\Contact::find($id);
-    return view("contacts.show", compact("contact"));
-}
-
-    
+    function show($id) {
+        $contact = Contact::find($id);
+        return view('contacts.show', compact('contact'));
+    }
 }

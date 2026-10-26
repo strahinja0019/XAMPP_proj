@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,15 @@ Route::get('/', function () {
 
 
 
-Route::get('/contacts', [ContactController::class,"index"])->name('contacts.index');
+Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+
+Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
+
+Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
 
 
-Route::get('/contacts/create', [ContactController::class,"create"])->name('contacts.create');
+Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
 
-Route::get('/contacts/{id}', [ContactController::class,"show"])->name('contacts.show');
+Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
+
+Route::get('/companies/{id}', [CompanyController::class, 'show'])->name('companies.show');
