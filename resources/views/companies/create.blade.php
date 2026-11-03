@@ -1,3 +1,13 @@
+@extends('layouts.main')
+
+@section('content')
+
+<!--
 <h1>Add new company</h1>
 
 <a href="{{ route('companies.index') }}">Back to all Contacts</a>
+-->
+
+
+
+@endsection
