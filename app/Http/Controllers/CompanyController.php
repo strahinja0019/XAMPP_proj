@@ -9,7 +9,8 @@ class CompanyController extends Controller
 {
     // Return the contacts index view
     function index() {
-        return view('companies.index');
+        $companies = Company::all();
+        return view('companies.index',compact('companies'));
     }
 
     // Return the contacts create view
