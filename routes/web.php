@@ -25,7 +25,11 @@ Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.ind
 
 Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 
+Route::post('/contacts', [ContactController::class,'store'])->name('contacts.store');
+
 Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
+
+
 
 
 Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
